@@ -3,3 +3,7 @@ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/dock
 sudo yum install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin --allowerasing
 sudo systemctl start docker
 sudo systemctl enable docker
+sudo groupadd docker
+sudo usermod -aG docker $(whoami)
+<logout and log back in>
+sudo systemctl restart docker
